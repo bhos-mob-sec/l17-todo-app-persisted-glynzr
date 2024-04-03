@@ -10,9 +10,9 @@ data class TodoRemoteDto(
     val weekday: String
 ) {
     fun toLocal() = TodoLocalDto(
-        id = this.id,
-        title = this.title,
-        completed = this.completed,
-        weekday = this.weekday
+        id =id,
+        title = title,
+        completed = completed,
+        weekday =weekday
     )
 }

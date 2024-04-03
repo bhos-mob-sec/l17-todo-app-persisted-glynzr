@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface TodoDao {
     @Query("SELECT * FROM todos ORDER BY (CASE weekday WHEN 'Monday' THEN 1 WHEN 'Tuesday' THEN 2 WHEN 'Wednesday' THEN 3 WHEN 'Thursday' THEN 4 WHEN 'Friday' THEN 5 WHEN 'Saturday' THEN 6 WHEN 'Sunday' THEN 7 END)")
-    fun getTodos(): Flow<List<TodoLocalDto>>
+    fun getAllTodos(): Flow<List<TodoLocalDto>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTodos(todos: List<TodoLocalDto>)
+    suspend fun insertTodo(todos: List<TodoLocalDto>)
 }
